@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3doy41odet30"]
+
+[ext_resource type="Script" uid="uid://cjo5cixxojust" path="res://Scripts/Player/player.gd" id="1_sl7w7"]
+[ext_resource type="Texture2D" uid="uid://bsx5pteg7do8d" path="res://icon.svg" id="1_v04en"]
+
+[sub_resource type="Gradient" id="Gradient_b1crl"]
+interpolation_mode = 1
+colors = PackedColorArray(0.133333, 0.501961, 0.980392, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v04en"]
+gradient = SubResource("Gradient_b1crl")
+width = 256
+height = 32
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl7w7"]
+size = Vector2(256, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqw31"]
+size = Vector2(64, 64)
+
+[node name="Nodeless State Machine" type="Node2D"]
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="Level"]
+position = Vector2(128, 704)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Platform"]
+texture = SubResource("GradientTexture2D_v04en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform"]
+shape = SubResource("RectangleShape2D_sl7w7")
+
+[node name="Platform2" type="StaticBody2D" parent="Level"]
+position = Vector2(384, 704)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Platform2"]
+texture = SubResource("GradientTexture2D_v04en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform2"]
+shape = SubResource("RectangleShape2D_sl7w7")
+
+[node name="Platform3" type="StaticBody2D" parent="Level"]
+position = Vector2(640, 704)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Platform3"]
+texture = SubResource("GradientTexture2D_v04en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform3"]
+shape = SubResource("RectangleShape2D_sl7w7")
+
+[node name="Platform4" type="StaticBody2D" parent="Level"]
+position = Vector2(896, 704)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Platform4"]
+texture = SubResource("GradientTexture2D_v04en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform4"]
+shape = SubResource("RectangleShape2D_sl7w7")
+
+[node name="Platform5" type="StaticBody2D" parent="Level"]
+position = Vector2(1152, 704)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Platform5"]
+texture = SubResource("GradientTexture2D_v04en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform5"]
+shape = SubResource("RectangleShape2D_sl7w7")
+
+[node name="Platform6" type="StaticBody2D" parent="Level"]
+position = Vector2(1152, 560)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Platform6"]
+texture = SubResource("GradientTexture2D_v04en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform6"]
+shape = SubResource("RectangleShape2D_sl7w7")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(304, 545)
+script = ExtResource("1_sl7w7")
+
+[node name="GFX" type="Sprite2D" parent="Player"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v04en")
+
+[node name="Col" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_fqw31")
